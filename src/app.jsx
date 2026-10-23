@@ -1,6 +1,13 @@
+
 import { useState } from "react";
 import "./app.css";
-import BrowseResources from "./components/BrowseResources";
+import MyRequests from "./components/MyRequests";
+import MyBookings from "./components/MyBookings";
+import BookingHistory from "./components/BookingHistory";
+import TimetableAvailability from "./components/TimetableAvailability";
+import BrowseResources, {
+  demoResources,
+} from "./components/BrowseResources";
 import BookResource from "./components/BookResource";
 
 const menuItems = [
@@ -42,6 +49,8 @@ const requests = [
 
 function App() {
   const [activeMenu, setActiveMenu] = useState("Dashboard");
+  const [resources] = useState(demoResources);
+  const [selectedResource, setSelectedResource] = useState(null);
 
   const stats = [
     { label: "Upcoming Bookings", value: "02", icon: "▣", color: "blue" },
@@ -49,6 +58,11 @@ function App() {
     { label: "Completed Bookings", value: "05", icon: "✓", color: "green" },
     { label: "Waiting in Queue", value: "02", icon: "☷", color: "purple" },
   ];
+
+  function openBooking(resource) {
+    setSelectedResource(resource);
+    setActiveMenu("Book a Resource");
+  }
 
   return (
     <div className="dashboard">
@@ -143,7 +157,28 @@ function App() {
 
         <div className="page-content">
           {activeMenu === "Browse Resources" ? (
-            <BrowseResources />
+            <BrowseResources
+              resources={resources}
+              onBookResource={openBooking}
+            />
+          ) : activeMenu === "Book a Resource" ? (
+            <BookResource
+              resources={resources}
+              initialResource={selectedResource}
+              onSubmitRequest={async (request) => {
+                // Frontend demo only. Connect this handler to the
+                // backend API when request persistence is implemented.
+                console.log("Demo booking request:", request);
+              }}
+            />
+            ) : activeMenu === "My Requests" ? (
+  <MyRequests requests={requests} />
+  ) : activeMenu === "My Bookings" ? (
+  <MyBookings requests={requests} />
+  ) : activeMenu === "Timetable & Availability" ? (
+  <TimetableAvailability />
+  ) : activeMenu === "Booking History" ? (
+  <BookingHistory requests={requests} />
           ) : activeMenu === "Dashboard" ? (
             <>
               <section className="welcome-section">
@@ -210,7 +245,10 @@ function App() {
                   <button
                     type="button"
                     className="quick-card"
-                    onClick={() => setActiveMenu("Book a Resource")}
+                    onClick={() => {
+                      setSelectedResource(null);
+                      setActiveMenu("Book a Resource");
+                    }}
                   >
                     <span className="quick-icon">＋</span>
                     <span className="quick-text">

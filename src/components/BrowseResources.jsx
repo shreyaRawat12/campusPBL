@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import "./BrowseResources.css";
 
-// Temporary demo data only.
-// Later, this array will be replaced by data from the backend/API.
-const demoResources = [
+// Temporary demo inventory.
+// Later, replace this data source with resources from the backend/API.
+export const demoResources = [
   {
     id: 1,
     name: "Sample Classroom",
@@ -41,8 +41,6 @@ export default function BrowseResources({
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [availability, setAvailability] = useState("All");
 
-  // Categories are generated from the supplied resource data.
-  // New categories will appear automatically when resources are added.
   const categories = useMemo(
     () => [
       "All",
@@ -94,6 +92,12 @@ export default function BrowseResources({
         `Demo only: "${resource.name}" selected. Booking will be connected later.`
       );
     }
+  }
+
+  function clearFilters() {
+    setSearch("");
+    setSelectedCategory("All");
+    setAvailability("All");
   }
 
   return (
@@ -174,7 +178,9 @@ export default function BrowseResources({
 
                 <span
                   className={`availability-badge ${
-                    resource.available ? "is-available" : "is-unavailable"
+                    resource.available
+                      ? "is-available"
+                      : "is-unavailable"
                   }`}
                 >
                   {resource.available ? "Available" : "Unavailable"}
@@ -208,7 +214,9 @@ export default function BrowseResources({
                   disabled={!resource.available}
                   onClick={() => handleBook(resource)}
                 >
-                  {resource.available ? "Book Resource →" : "Currently Unavailable"}
+                  {resource.available
+                    ? "Book Resource →"
+                    : "Currently Unavailable"}
                 </button>
               </div>
             </article>
@@ -219,14 +227,7 @@ export default function BrowseResources({
           <div aria-hidden="true">⌕</div>
           <h2>No resources found</h2>
           <p>Try another search or change your filters.</p>
-          <button
-            type="button"
-            onClick={() => {
-              setSearch("");
-              setSelectedCategory("All");
-              setAvailability("All");
-            }}
-          >
+          <button type="button" onClick={clearFilters}>
             Clear filters
           </button>
         </div>

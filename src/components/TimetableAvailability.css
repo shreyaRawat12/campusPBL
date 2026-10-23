@@ -1,0 +1,627 @@
+
+.timetable-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px;
+  color: #172033;
+  box-sizing: border-box;
+}
+
+.timetable-page *,
+.timetable-page *::before,
+.timetable-page *::after {
+  box-sizing: border-box;
+}
+
+.ta-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.ta-eyebrow {
+  margin: 0 0 9px;
+  color: #4361ee;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ta-page-header h1 {
+  margin: 0;
+  font-size: clamp(25px, 3vw, 34px);
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.ta-subtitle {
+  margin: 10px 0 0;
+  color: #788397;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ta-header-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #edf2ff;
+  color: #4361ee;
+  font-size: 30px;
+}
+
+.ta-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 27px;
+}
+
+.ta-summary-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 21px 19px;
+  border: 1px solid #e9edf4;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(30 50 90 / 3%);
+}
+
+.ta-summary-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.ta-summary-blue {
+  color: #13855b;
+  background: #e5f8ef;
+}
+
+.ta-summary-orange {
+  color: #b77912;
+  background: #fff4df;
+}
+
+.ta-summary-gray {
+  color: #657084;
+  background: #eef0f4;
+}
+
+.ta-summary-card p {
+  margin: 2px 0 8px;
+  color: #778297;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ta-summary-card h2 {
+  margin: 0 0 7px;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.ta-summary-card span {
+  color: #9099a9;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.ta-calendar-section {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #e9edf4;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(30 50 90 / 3%);
+}
+
+.ta-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.ta-section-heading h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.ta-section-heading p {
+  margin: 7px 0 0;
+  color: #8791a2;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ta-today-button {
+  flex-shrink: 0;
+  padding: 9px 13px;
+  border: 1px solid #dce4ff;
+  border-radius: 8px;
+  background: #f3f5ff;
+  color: #4361ee;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ta-today-button:hover {
+  background: #e8edff;
+}
+
+.ta-filters {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.ta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ta-field > span {
+  color: #5e6a7e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ta-field select {
+  width: 100%;
+  min-height: 43px;
+  padding: 0 12px;
+  border: 1px solid #e1e6ef;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #354156;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ta-field select:focus {
+  border-color: #7189f7;
+  box-shadow: 0 0 0 3px rgb(67 97 238 / 10%);
+}
+
+.ta-resource-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px;
+  border: 1px solid #e9edf8;
+  border-radius: 11px;
+  background: #fafbff;
+}
+
+.ta-resource-symbol {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: #edf2ff;
+  color: #4361ee;
+  font-size: 20px;
+}
+
+.ta-resource-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.ta-resource-text strong {
+  color: #263249;
+  font-size: 13px;
+}
+
+.ta-resource-text > span {
+  color: #8590a2;
+  font-size: 11px;
+}
+
+.ta-resource-tag {
+  margin-left: auto;
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: #edf2ff;
+  color: #4361ee;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ta-week-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 23px 0 19px;
+}
+
+.ta-week-navigation strong {
+  min-width: 155px;
+  color: #354156;
+  font-size: 13px;
+  text-align: center;
+}
+
+.ta-week-arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e3e8f1;
+  border-radius: 9px;
+  background: #fff;
+  color: #536178;
+  font-size: 19px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.ta-week-arrow:hover {
+  border-color: #b9c6fa;
+  background: #f4f6ff;
+}
+
+.ta-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 13px;
+}
+
+.ta-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #677287;
+  font-size: 11px;
+}
+
+.ta-legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.ta-dot-available {
+  background: #20a56c;
+}
+
+.ta-dot-booked {
+  background: #e5a12a;
+}
+
+.ta-dot-unavailable {
+  background: #9aa3b1;
+}
+
+.ta-calendar-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e9edf4;
+  border-radius: 11px;
+}
+
+.ta-calendar {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.ta-calendar thead {
+  background: #f7f9fc;
+}
+
+.ta-calendar thead th {
+  height: 67px;
+  padding: 10px 5px;
+  border-bottom: 1px solid #e9edf4;
+  border-right: 1px solid #edf0f5;
+}
+
+.ta-calendar thead th:last-child {
+  border-right: 0;
+}
+
+.ta-calendar .ta-time-heading {
+  width: 105px;
+  color: #7c879a;
+  font-size: 10px;
+  letter-spacing: 0.7px;
+}
+
+.ta-day-name,
+.ta-day-date {
+  display: block;
+}
+
+.ta-day-name {
+  margin-bottom: 6px;
+  color: #344157;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ta-day-date {
+  color: #8a94a5;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.ta-calendar tbody th,
+.ta-calendar tbody td {
+  height: 60px;
+  padding: 6px;
+  border-right: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.ta-calendar tbody tr:last-child th,
+.ta-calendar tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ta-calendar tbody td:last-child {
+  border-right: 0;
+}
+
+.ta-time-cell {
+  background: #fcfcfe;
+  color: #7c879a;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ta-slot {
+  display: block;
+  width: 100%;
+  min-height: 37px;
+  padding: 7px 4px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.ta-slot:hover {
+  transform: translateY(-1px);
+}
+
+.ta-slot-available {
+  border-color: #d1f0df;
+  background: #eaf8f0;
+  color: #13855b;
+}
+
+.ta-slot-booked {
+  border-color: #f8e5bc;
+  background: #fff5df;
+  color: #a96e0a;
+}
+
+.ta-slot-unavailable {
+  border-color: #e5e8ee;
+  background: #f0f2f6;
+  color: #788397;
+}
+
+.ta-slot-selected {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgb(67 97 238 / 15%);
+}
+
+.ta-slot-hidden {
+  color: #c4cad4;
+  font-size: 12px;
+}
+
+.ta-selected-slot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 19px;
+  padding: 17px;
+  border: 1px solid #e6ebf6;
+  border-radius: 11px;
+  background: #fafbff;
+}
+
+.ta-selected-label {
+  color: #8590a2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ta-selected-slot h3 {
+  margin: 7px 0 5px;
+  color: #263249;
+  font-size: 14px;
+}
+
+.ta-selected-slot p {
+  margin: 0;
+  color: #7b8799;
+  font-size: 12px;
+}
+
+.ta-status-pill {
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.ta-pill-available {
+  background: #e5f8ef;
+  color: #13855b;
+}
+
+.ta-pill-booked {
+  background: #fff4df;
+  color: #a96e0a;
+}
+
+.ta-pill-unavailable {
+  background: #eef0f4;
+  color: #657084;
+}
+
+.ta-demo-note {
+  margin: 17px 0 0;
+  color: #929bac;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.ta-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+  padding: 16px 0 4px;
+  color: #939cad;
+  font-size: 11px;
+}
+
+@media (max-width: 1000px) {
+  .ta-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ta-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ta-resource-field {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .timetable-page {
+    padding: 18px 12px;
+  }
+
+  .ta-page-header {
+    margin-bottom: 20px;
+  }
+
+  .ta-header-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    font-size: 24px;
+  }
+
+  .ta-subtitle {
+    font-size: 12px;
+  }
+
+  .ta-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .ta-summary-card {
+    padding: 16px;
+  }
+
+  .ta-calendar-section {
+    padding: 15px 12px;
+  }
+
+  .ta-section-heading {
+    align-items: flex-start;
+  }
+
+  .ta-section-heading h2 {
+    font-size: 16px;
+  }
+
+  .ta-section-heading p {
+    font-size: 12px;
+  }
+
+  .ta-today-button {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+
+  .ta-filters {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ta-resource-field {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .ta-legend {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .ta-legend > span {
+    font-size: 10px;
+  }
+
+  .ta-week-navigation {
+    gap: 12px;
+  }
+
+  .ta-week-navigation strong {
+    min-width: 135px;
+    font-size: 12px;
+  }
+
+  .ta-footer {
+    font-size: 10px;
+  }
+}
