@@ -1,0 +1,106 @@
+.br-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.br-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.br-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+}
+
+.br-header h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.br-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin: 6px 0 0;
+}
+
+.br-tabs {
+  display: flex;
+  gap: 8px;
+  background-color: #111827;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  width: fit-content;
+}
+
+.br-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.br-tab-btn:hover {
+  color: #ffffff;
+}
+
+.br-tab-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.br-card {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.pill-approved {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.pill-pending {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.pill-rejected {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.pill-cancelled {
+  background-color: rgba(100, 116, 139, 0.2);
+  color: #94a3b8;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}

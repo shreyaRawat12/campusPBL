@@ -625,3 +625,65 @@
     font-size: 10px;
   }
 }
+
+
+/* Specific slot status distinctions: Green (Available), Blue (Manual), Purple (OS Auto), Grey (Academic), Red (Conflict) */
+.ta-slot-available {
+  border-color: #a7f3d0 !important;
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+}
+
+.ta-slot-manual {
+  border-color: #bfdbfe !important;
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+
+.ta-slot-os {
+  border-color: #ddd6fe !important;
+  background: #f5f3ff !important;
+  color: #6d28d9 !important;
+}
+
+.ta-slot-academic {
+  border-color: #cbd5e1 !important;
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+.ta-slot-conflict {
+  border-color: #fca5a5 !important;
+  background: #fef2f2 !important;
+  color: #b91c1c !important;
+}
+
+.ta-summary-manual {
+  color: #1d4ed8 !important;
+  background: #eff6ff !important;
+}
+
+.ta-summary-os {
+  color: #6d28d9 !important;
+  background: #f5f3ff !important;
+}
+
+.ta-pill-available {
+  background: #ecfdf5 !important;
+  color: #047857 !important;
+}
+
+.ta-pill-manual {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+
+.ta-pill-os {
+  background: #f5f3ff !important;
+  color: #6d28d9 !important;
+}
+
+.ta-pill-academic {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+}
